@@ -1,0 +1,8 @@
+{
+  "version": "0.2.6-box",
+  "chipFamily": "ESP32-S3",
+  "board": "Waveshare ESP32-S3-Touch-LCD-1.85C-Box PCB V2.1",
+  "path": "v2/roundtv_box_merged.bin",
+  "bytes": 787920,
+  "sha256": "ea7d9a1d857058a17d122553f38c58dd0d17d033c99bae8fcd19dfb1efed20fe"
+}

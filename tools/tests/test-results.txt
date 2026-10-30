@@ -1,0 +1,12 @@
+test_bad_input_cleanup (__main__.Tests.test_bad_input_cleanup) ... ok
+test_cancel_active_conversion (__main__.Tests.test_cancel_active_conversion) ... ok
+test_collision_reserved_numbers (__main__.Tests.test_collision_reserved_numbers) ... ok
+test_duplicate_detection (__main__.Tests.test_duplicate_detection) ... ok
+test_natural_and_manual (__main__.Tests.test_natural_and_manual) ... ok
+test_numbering (__main__.Tests.test_numbering) ... ok
+test_real_conversion_skip_and_overwrite (__main__.Tests.test_real_conversion_skip_and_overwrite) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 3.625s
+
+OK

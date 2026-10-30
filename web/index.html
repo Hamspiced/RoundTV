@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111819">
+  <meta name="description" content="Install RoundTV R7 over USB on the Waveshare ESP32-S3-Touch-LCD-1.85C-Box PCB V2.1.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>RoundTV · USB firmware installer</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./assets/main.js"></script>
+</head>
+<body>
+  <header><a class="brand" href="./" aria-label="RoundTV home"><span class="brand-mark" aria-hidden="true"></span> ROUND TV</a><a href="https://github.com/Hamspiced/RoundTV">Source &amp; documentation ↗</a></header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <p class="eyebrow">A LITTLE SCREEN. A WHOLE LOT OF TV.</p>
+        <h1 id="title">Your next episode<br>starts here.</h1>
+        <p class="intro">Install RoundTV directly from your browser. Connect your Box over USB—no IDE, command line, or extra flasher needed.</p>
+        <div class="badges"><span>R7 · 0.2.6-box</span><span>ESP32-S3</span><span>PCB V2.1 only</span></div>
+      </div>
+      <div class="tv" aria-hidden="true"><div class="screen"><span class="screen-small">ROUND TV</span><span class="screen-r7">R7</span><span class="screen-caption">READY FOR THE NEXT EPISODE</span><div class="scanline"></div></div><span class="power"></span></div>
+    </section>
+    <section class="install-layout">
+      <article class="card installer-card" aria-labelledby="install-title">
+        <p class="eyebrow">USB INSTALLER</p>
+        <h2 id="install-title">One board. One right image.</h2>
+        <p>This firmware is for the <strong>Waveshare ESP32-S3-Touch-LCD-1.85C-Box, PCB V2.1</strong>, with ES8311 audio. It is not for V1, other 1.85-inch boards, the older 2.1-inch display, or ESP32-C5.</p>
+        <p id="status" role="status" aria-live="polite">Checking browser and firmware…</p>
+        <label class="confirmation"><input id="confirm-board" type="checkbox"><span>I checked the PCB: this is the <strong>1.85C-Box V2.1</strong>. I understand flashing replaces its internal firmware/settings.</span></label>
+        <p class="small">The chip loader can identify ESP32-S3, but cannot verify your display or audio hardware. Your SD card and media are not formatted or changed.</p>
+        <div id="install-gate">
+          <button id="placeholder" class="primary" disabled>Confirm your board to continue</button>
+          <esp-web-install-button id="installer" manifest="./manifest.json" hidden>
+            <button id="flash-button" class="primary" slot="activate" disabled>Connect &amp; install R7 <span aria-hidden="true">→</span></button>
+            <span slot="unsupported">Open this page in desktop Chrome or Edge to flash over USB.</span>
+            <span slot="not-allowed">USB flashing is available over HTTPS only.</span>
+          </esp-web-install-button>
+        </div>
+        <noscript><p>JavaScript is required for browser flashing. Download the firmware from the source repository for manual installation.</p></noscript>
+        <div class="downloads"><a id="download" download hidden>Download merged .bin</a><a id="checksum-download" download hidden>SHA-256 file</a></div>
+        <dl class="image-details"><div><dt>Flash offset</dt><dd>0x0</dd></div><div><dt>Image size</dt><dd id="image-size">Checking…</dd></div><div class="hash"><dt>Verified SHA-256</dt><dd id="checksum">Checking…</dd></div></dl>
+      </article>
+      <aside class="steps" aria-labelledby="steps-title">
+        <h2 id="steps-title">Before you press play.</h2>
+        <ol><li><strong>Open desktop Chrome or Edge.</strong><p>Web Serial needs HTTPS and a supported desktop browser. Phones, tablets, and Safari are not supported here.</p></li><li><strong>Plug in with a USB data cable.</strong><p>Connect directly to the computer. Close serial monitors and any other flasher tabs first.</p></li><li><strong>Confirm, connect, install.</strong><p>Select the Box’s serial port when asked. Keep it connected until installation completes, then reset or power-cycle if needed.</p></li></ol>
+        <details><summary>No port, connection failed, or stuck in download mode?</summary><p>Try a known-good data cable and another USB port. If the port is busy, close serial apps and other browser tabs, then unplug and reconnect.</p><p>To enter download mode: hold <strong>BOOT</strong>, press and release <strong>RESET</strong>, then release <strong>BOOT</strong> and retry. The port name may change. Press RESET with BOOT released after installation if necessary.</p><p>Canceling the port chooser is safe; retry when ready. Do not disconnect during writing.</p></details>
+      </aside>
+    </section>
+    <section class="release-note"><span class="release-label">ABOUT THIS RELEASE</span><div><h2>A stronger playback path. A clearer diagnosis.</h2><p>R7 bounds late-frame dropping and enables faster FAT seeking, while keeping the ten-second audio buffer and 50% startup volume. Its controls show audio buffering, published-picture count, and video stage.</p><p><strong>The reported freeze is not yet confirmed fixed on physical hardware.</strong> After updating, play a full episode. If it freezes, send two photos of the controls several seconds apart and note whether the <code>V</code> counter advances.</p></div></section>
+  </main>
+  <footer><span>RoundTV · Built for the 1.85C-Box V2.1</span><a href="https://github.com/Hamspiced/RoundTV/blob/main/FLASH.md">Manual flashing &amp; troubleshooting ↗</a></footer>
+</body>
+</html>

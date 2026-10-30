@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(controls_check C CXX)
+set(LV_CONF_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lv_conf.h" CACHE STRING "" FORCE)
+add_subdirectory("${LVGL_DIR}" lvgl-build)
+add_executable(controls_check main.cpp)
+target_include_directories(controls_check PRIVATE ../../src)
+target_link_libraries(controls_check lvgl m)
+target_compile_features(controls_check PRIVATE cxx_std_17)

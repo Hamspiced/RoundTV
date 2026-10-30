@@ -1,0 +1,19 @@
+{
+  "name": "roundtv-flasher",
+  "private": true,
+  "version": "0.2.6",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node web/build.mjs",
+    "serve": "node web/serve.mjs",
+    "test": "node --test web/tests/build.test.mjs",
+    "test:browser": "playwright test"
+  },
+  "dependencies": { "esp-web-tools": "10.4.0" },
+  "overrides": { "@material/web": "2.2.0" },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "esbuild": "0.28.2"
+  }
+}
